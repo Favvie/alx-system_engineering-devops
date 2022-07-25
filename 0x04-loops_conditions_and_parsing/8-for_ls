@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 #for loop with cwd
 for i in `ls .`; do
-    cut -b 5- $i
+    echo  cut -b 3- $i
 done

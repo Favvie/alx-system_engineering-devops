@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #check luck using while
 counter=1
-while [ "$counter" -lt 10 ]
+while [ "$counter" -le 10 ]
 do
     if (( counter == 4 ))
     then
