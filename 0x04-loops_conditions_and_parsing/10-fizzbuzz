@@ -5,7 +5,7 @@ while [ "$counter" -le 100 ]
 do
     if (( counter%3 == 0 && counter%5 == 0 ))
     then
-	echo 'Fizzbuzz'
+	echo 'FizzBuzz'
    elif (( counter%3 == 0 ))
    then
        echo 'Fizz'
