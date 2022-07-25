@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#for loop with cwd
-for i in `ls .`; do
-    echo  cut -b 3- $i
-done
+# list file names in current directory
+# without the task number and "-"
+
+for file in *; do echo "${file/*-/}"; done
