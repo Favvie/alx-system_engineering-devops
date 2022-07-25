@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#use kill command to terminate
+while true; do
+    echo 'To infinity and beyond'
+done
