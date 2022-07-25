@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#for loop with cwd
+for i in `ls .`; do
+    cut -b 5-xcase 
+ $i
+done
