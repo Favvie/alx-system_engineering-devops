@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+ #!/usr/bin/env bash
 #check luck using while
 counter=1
 while [ "$counter" -le 10 ]

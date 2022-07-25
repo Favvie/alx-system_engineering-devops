@@ -9,6 +9,7 @@ do
 	    echo 'bad luck from China'
 	    ;;
 	9)
+	    echo "$counter"
 	    echo 'bad luck from Japan'
 	    ;;
 	17)
