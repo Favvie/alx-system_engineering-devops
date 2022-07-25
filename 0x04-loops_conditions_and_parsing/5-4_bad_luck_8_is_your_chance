@@ -12,5 +12,5 @@ do
     else
 	echo 'Best School'
     fi
-    let "counter = $counter + 1"
+    (( counter = $counter + 1 ))
 done
