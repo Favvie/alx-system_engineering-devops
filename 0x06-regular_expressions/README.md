@@ -1,0 +1,1 @@
+Regular expressions are a sequence of characters used in pattern matching. It comprises various tokens that allow to create dynamic patterns. We use Oniguruma, a regular expression library to build re. This library uses ruby by default. 
