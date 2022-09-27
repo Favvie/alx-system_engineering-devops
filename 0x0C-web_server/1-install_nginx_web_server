@@ -3,5 +3,5 @@
 index_file=/var/www/html/index.nginx-debian.html
 sudo apt-get update
 sudo apt-get install nginx -y
-echo "Hello world" | sudo tee $index_file
+echo "Hello world!" | sudo tee $index_file
 sudo service nginx restart
