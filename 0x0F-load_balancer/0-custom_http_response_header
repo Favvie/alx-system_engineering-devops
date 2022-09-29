@@ -8,34 +8,34 @@ config_text=\
 	listen 80 default_server;
 	listen [::]:80 default_server;
 
-	 root /var/www/html;
+	root /var/www/html;
 
-	 index index.html index.htm index.nginx-debian.html;
+	index index.html index.htm index.nginx-debian.html;
 
-	 server_name _;
+	server_name _;
 
-	 error_page 404 /error.html;
-	 add_header X-Served-By $(hostname);
+	error_page 404 /error.html;
+	add_header X-Served-By $(hostname);
 
-	 location /error.html {
-	 	  root /var/www/html;
-        	   internal
-			   }
+	location /error.html {
+		 root /var/www/html;
+		 internal;
+	}
 
-			   location /redirect_me {
-			   	     rewrite ^/redirect_me https://google.com permanent;
-				     }
+	location /redirect_me {
+		 rewrite ^/redirect_me https://google.com permanent;
+	}
 
-				     location / {
-				     	       try_files \$uri \$uri/ =404;
-					       }
+	location / {
+		 try_files \$uri \$uri/ =404;
+	}
 }"
 sudo apt update
 sudo apt install nginx -y
 echo "Hello World!" | sudo tee $index_file &&
-    sudo chmod 644 $index_file
+sudo chmod 644 $index_file
 sudo chmod a+w $default_web &&
-    echo "$config_text" > $default_web
+echo "$config_text" > $default_web
 sudo chmod 644 $default_web
 sudo touch $error_file
 sudo chmod a+w $error_file
