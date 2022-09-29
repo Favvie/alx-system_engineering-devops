@@ -14,8 +14,8 @@ frontend manage_entry
 	     default_backend my_web_servers
 backend my_web_servers
 	balance static-rr
-	server web-01 34.236.187.99:80 check
-	server web-02 3.235.225.96:80 check
+	server web-01 44.200.42.106:80 check
+	server web-02 3.237.31.214:80 check
 "
 
 echo "$config" | sudo tee -a "$path"
