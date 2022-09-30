@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# configure an nginx server
+kill -15 "$(cat var/run/nginx.pid)"
+config_data=\
+"server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	root /usr/share/nginx/html;
+	index index.html index.htm;
+
+	server_name localhost;
+
+	location / {
+		 try_files $uri $uri/ =404;
+	}
+"
+echo "$config_data" > /etc/nginx/sites-available/default
+sudo service nginx restart
