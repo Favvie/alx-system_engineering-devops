@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # configure an nginx server
+sudo apt update
+sudo apt install nginx -y
 rm /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx restart
