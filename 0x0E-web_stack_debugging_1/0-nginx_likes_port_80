@@ -2,6 +2,6 @@
 # configure an nginx server
 sudo apt update
 sudo apt install nginx -y
-sed -i /8080 default_server/80 default_server/g /etc/nginx/sites-enabled/default
+sudo sed -i 's/8080 default_server/80 default_server/g' /etc/nginx/sites-enabled/default
 sudo rm /var/run/nginx.pid
 sudo service nginx restart
