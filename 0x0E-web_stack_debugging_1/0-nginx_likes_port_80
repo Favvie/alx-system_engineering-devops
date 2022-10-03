@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # configure an nginx server
 kill -15 "$(cat var/run/nginx.pid)"
-config_data=\
+config_data=
 "server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
