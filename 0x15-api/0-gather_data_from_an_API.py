@@ -23,7 +23,7 @@ if __name__ == "__main__":
         if item["completed"]:
             count_completed = count_completed + 1
 
-    print("Employee {} is done with tasks({}/{})"
+    print("Employee {} is done with tasks({}/{}):"
           .format(username, count_completed, count_task))
 
     for item in data:
