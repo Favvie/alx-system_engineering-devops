@@ -28,4 +28,4 @@ if __name__ == "__main__":
 
     for item in data:
         if item["completed"]:
-            print("\t{}".format(item["title"]))
+            print("\t {}".format(item["title"]))
