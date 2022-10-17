@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-export to csv filw
+a module  that export to csv file
 """
 import csv
 import json
