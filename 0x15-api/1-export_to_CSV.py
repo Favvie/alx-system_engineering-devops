@@ -1,34 +1,33 @@
 #!/usr/bin/python3
-"""module that creates csv file and creats 
-a new csv filel
+"""Using what you did in the task #0, extend your Python script
+to export data in the CSV format.
 """
-import csv
-import json
-import requests
-import sys
 
+import csv
+import requests
+from sys import argv
 
 if __name__ == "__main__":
-    user_id = sys.argv[1]
-    url = "https://jsonplaceholder.typicode.com/users/{}".format(user_id)
-    user_response = requests.get(url)
-    todo_response = requests.get(url + "/todos")
+    try:
+        user_id = argv[1]
+        url = "https://jsonplaceholder.typicode.com/users/{}".format(user_id)
+        file_name = "{}.csv".format(user_id)
+    except IndexError:
+        exit
 
-    username = user_response.json()["name"]
+    res = requests.get(url)
+    res = res.json()
+    user_name = "{}".format(res.get('username'))
+    res = requests.get(url + "/todos")
+    res = res.json()
 
-    data = todo_response.json()
+    with open(file_name, "w") as f:
+        writer = csv.writer(f, quoting=csv.QUOTE_ALL)
+        for task in res:
+            writer.writerow([
+                user_id,
+                user_name,
+                task.get('completed'),
+                task.get('title')
+            ])
 
-    item_arr = []
-    for item in data:
-        arr = []
-        arr.append(str(item["userId"]))
-        arr.append(str(username))
-        arr.append(item["completed"])
-        arr.append(item["title"])
-        item_arr.append(arr)
-
-    header = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
-    with open(f"{user_id}.csv", "w", encoding="UTF-8", newline="") as f:
-        writer = csv.writer(f)
-        writer.writerow(header)
-        writer.writerows(item_arr)
